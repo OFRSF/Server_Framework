@@ -1,16 +1,16 @@
 cmake_minimum_required(VERSION 3.22)
-project(JSONLib)
+project(JSON_LIB)
 
-set(CMAKE_CXX_STANDARD 20)
-set(CMAKE_CXX_STANDARD_REQUIRED)
+set(JSON_LIB_ROOT_DIR ${CMAKE_SOURCE_DIR}/json_module)
 
-set(JSON_ROOT_DIR ${CMAKE_SOURCE_DIR})
+include_directories(${JSON_LIB_ROOT_DIR}/inc)
 
-add_compile_options(-O0 -g -Werror -Wextra -Wall -pedantic)
+message(STATUS "root dir: ${JSON_LIB_ROOT_DIR}}")
 
-include_directories(${JSON_ROOT_DIR}/inc)
+set(SOURCE_FILES "src/json_common.cpp")
+set(HEADER_FILES "inc/json_common.h")
 
-add_library(json_lib
-        src/json_common.cpp inc/json_common.h)
+add_library(rf_json STATIC ${SOURCE_FILES} ${HEADER_FILES})
 
 add_subdirectory(test)
+
