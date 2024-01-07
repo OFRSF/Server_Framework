@@ -17,7 +17,7 @@
 
 /* Features for implementing:
  * supprot escape symbols for String type
- * support unicode for String type
+ * support unicode for String type */
 
 
 #define JSON_COMMON_VER "0.1.2"
